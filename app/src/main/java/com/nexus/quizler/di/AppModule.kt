@@ -1,6 +1,7 @@
 package com.nexus.quizler.di
 
 import com.nexus.quizler.network.QuestionAPI
+import com.nexus.quizler.repository.QuestionRepository
 import com.nexus.quizler.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -13,6 +14,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Provides
+    @Singleton
+    fun provideQuestionRepository(api: QuestionAPI): QuestionRepository {
+        return QuestionRepository(api)
+    }
 
     @Provides
     @Singleton
