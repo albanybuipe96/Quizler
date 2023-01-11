@@ -1,9 +1,15 @@
 package com.nexus.quizler.components
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.nexus.quizler.screens.QuestionViewModel
 
 @Composable
@@ -13,7 +19,11 @@ fun Questions(viewModel: QuestionViewModel) {
         mutableStateOf(0)
     }
     if (viewModel.data.value.loading == true) {
-        CircularProgressIndicator()
+        Box(modifier = Modifier
+            .height(80.dp)
+            .width(80.dp), contentAlignment = Alignment.Center) {
+            CircularProgressIndicator()
+        }
     } else {
         val question = try {
             questions?.get(questionIndex.value)

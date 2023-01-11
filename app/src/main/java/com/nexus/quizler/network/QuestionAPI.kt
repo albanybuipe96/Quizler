@@ -8,6 +8,6 @@ import javax.inject.Singleton
 interface QuestionAPI {
 
     @GET("world.json")
-    suspend fun getQuestions(): Question
+    suspend fun getQuestions(): ArrayList<Question>
 
 }
