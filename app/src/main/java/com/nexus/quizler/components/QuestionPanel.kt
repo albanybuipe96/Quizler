@@ -20,14 +20,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.nexus.quizler.model.QuestionItem
+import com.nexus.quizler.model.Question
 import com.nexus.quizler.screens.QuestionViewModel
 import com.nexus.quizler.ui.color.QuizlerColor
 
 //@Preview
 @Composable
 fun QuestionPanel(
-    question: QuestionItem,
+    question: Question,
     questionIndex: MutableState<Int>,
     viewModel: QuestionViewModel,
     onNext: (Int) -> Unit = {},

@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nexus.quizler.data.DataOrException
-import com.nexus.quizler.model.QuestionItem
+import com.nexus.quizler.model.Question
 import com.nexus.quizler.repository.QuestionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class QuestionViewModel @Inject constructor(private val repository: QuestionRepository) : ViewModel() {
-    val data: MutableState<DataOrException<ArrayList<QuestionItem>, Boolean, Exception>> =
+    val data: MutableState<DataOrException<ArrayList<Question>, Boolean, Exception>> =
         mutableStateOf(DataOrException(null, true, Exception("")))
 
     init {
